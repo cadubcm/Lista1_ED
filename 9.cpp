@@ -26,7 +26,7 @@ int calcularTempoNaEmpresa(Funcionario f) {
     infoAdmissao.tm_mon = f.mesAdmissao - 1;
     infoAdmissao.tm_year = f.anoAdmissao - 1900;
 
-    // Calcula a diferença em anos
+    // Calcula a diferenÃ§a em anos
     int anos = infoAtual->tm_year + 1900 - f.anoAdmissao;
     if (infoAtual->tm_mon < infoAdmissao.tm_mon ||
        (infoAtual->tm_mon == infoAdmissao.tm_mon && infoAtual->tm_mday < infoAdmissao.tm_mday)) {
@@ -37,29 +37,29 @@ int calcularTempoNaEmpresa(Funcionario f) {
 }
 
 int main() {
-	setlocale(LC_ALL, "Portuguese");
+    setlocale(LC_ALL, "Portuguese");
     Funcionario funcionario;
 
-    printf("Digite o nome do funcionário: ");
+    printf("Digite o nome do funcionÃ¡rio: ");
     scanf(" %[^\n]", funcionario.nome);
 
-    printf("Digite o cargo do funcionário: ");
+    printf("Digite o cargo do funcionÃ¡rio: ");
     scanf(" %[^\n]", funcionario.cargo);
 
-    printf("Digite o salário do funcionário: ");
+    printf("Digite o salÃ¡rio do funcionÃ¡rio: ");
     scanf("%f", &funcionario.salario);
 
-    printf("Digite a data de admissão (dd mm aaaa): ");
+    printf("Digite a data de admissÃ£o (dd mm aaaa): ");
     scanf("%d %d %d", &funcionario.diaAdmissao, &funcionario.mesAdmissao, &funcionario.anoAdmissao);
 
-    printf("\nO funcionário %s está na empresa há %d anos.\n", funcionario.nome, calcularTempoNaEmpresa(funcionario));
+    printf("\nO funcionÃ¡rio %s estÃ¡ na empresa hÃ¡ %d anos.\n", funcionario.nome, calcularTempoNaEmpresa(funcionario));
 
     float porcentagem;
     printf("\nDigite a porcentagem de aumento: ");
     scanf("%f", &porcentagem);
     darAumento(&funcionario, porcentagem);
 
-    printf("Salário após aumento: %.2f\n", funcionario.salario);
+    printf("SalÃ¡rio apÃ³s aumento: %.2f\n", funcionario.salario);
 
     return 0;
 }
